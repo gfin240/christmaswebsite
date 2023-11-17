@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Name Entry</title>
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+            <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+            <style>
+                body {
+                    margin: 0; /* Remove default margin */
+                    padding: 0; /* Remove default padding */
+                    overflow-x: hidden; /* Hide horizontal scrollbar */
+                    background-color: #D7E6E9;
+                    font-family: 'Verdana', sans-serif;
+                    color:#1e4f42;
+                }
+                #main-content {
+                    padding: 20px; /* Add padding to the main content if needed */
+                    /* Add any other styles for your main content here */
+                }
+                .centered-text {
+                    text-align: center;
+                }
+                h1 {
+                font-family: 'Verdana', sans-serif;
+                color: #1e4f42
+                }
+
+                h2 {
+                font-family: 'Verdana', sans-serif;
+                color: #1e4f42
+                }
+
+                p {
+                font-family: 'Verdana', sans-serif;
+                color: #1e4f42
+                }
+
+                .two-column-container {
+                    display: flex;
+                    flex-wrap: wrap; /* Allow items to wrap to the next line */
+                    justify-content: space-between;
+                    padding: 20px;
+                }
+
+                .wishlist {
+                    width: 48%; /* Set the width of each column */
+                    margin-bottom: 20px; /* Add some space between columns */
+                    /* Add any other styles as needed */
+                }
+
+                .wishlist-title {
+                    font-weight: bold;
+                    display: block; /* Ensure the title spans the full width */
+                    margin-bottom: 10px; /* Add space below the title */
+                }
+            </style>
+            
+            
+        </head>
+    <body>
+        <div class = "centered-text">
+            <h1 style="font-family: 'Great Vibes', cursive; color: #1e4f42; font-size:xxx-large;">Christmas Wish Lists!</h1>
+        </div>
+        <img src="{{ url_for('static', filename='winterwonderland.jpg') }}" alt="Winter Wonderland" style="width: 100%; height: auto;">
+        <div id="main-content", padding="20px">
+            <h2>Here are the wish lists of the others:</h2>
+            <p>If you would like to buy a gift for someone, please remove it from their wishlist.</p>
+        </div>
+        <div class="two-column-container">
+            {% for person, wishlist in wishlists.items() %}
+                {% if person != user_name %}
+                    <div class="wishlist">
+                        <span class="wishlist-title">{{ person }}'s Wishlist:</span>
+                        <ul>
+                            {% for item in wishlist %}
+                                <li>{{ item }} <a href="{{ url_for('remove_item', user_name=person, item=item) }}">Remove</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+            
+</body>
+</html>
+

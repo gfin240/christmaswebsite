@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Entry</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+            background-color: #D7E6E9;
+            font-family: 'Verdana', sans-serif;
+        }
+        #main-content {
+            padding: 20px; /* Add padding to the main content if needed */
+            /* Add any other styles for your main content here */
+        }
+        .centered-text {
+            text-align: center;
+        }
+        h1 {
+        font-family: 'Verdana', sans-serif;
+        color: #1e4f42
+        }
+
+        h2 {
+        font-family: 'Verdana', sans-serif;
+        color: #1e4f42
+        }
+
+        p {
+        font-family: 'Verdana', sans-serif;
+        color: #1e4f42
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #368a73;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1e4f42;
+        }
+    </style>
+    
+    
+</head>
+
+<body>
+    <div class = "centered-text">
+        <h1 style="font-family: 'Great Vibes', cursive; color: #1e4f42; font-size:xxx-large;">Christmas Wish Lists!</h1>
+    </div>
+    <img src="{{ url_for('static', filename='winterwonderland.jpg') }}" alt="Winter Wonderland" style="width: 100%; height: auto;">
+    <div id="main-content", class="centered-text">
+    <h1>Who are you?</h1>
+    <h2>Please enter: Mum, Dad, Caitlin, Iain, Alastair, Gavin, Douglas, Josh, or Aaron</h2>
+    <form action="{{ url_for('home') }}" method="post">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>
