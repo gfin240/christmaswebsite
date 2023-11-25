@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Name Entry</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+        <style>
+            body {
+                margin: 0; 
+                padding: 0; 
+                overflow-x: hidden; 
+                background-color: #D7E6E9;
+                font-family: 'Verdana', sans-serif;
+            }
+            #main-content {
+                padding: 20px; 
+            }
+            .centered-text {
+                text-align: center;
+            }
+            h1 {
+            font-family: 'Verdana', sans-serif;
+            color: #1e4f42
+            }
+
+            h2 {
+            font-family: 'Verdana', sans-serif;
+            color: #1e4f42
+            }
+
+            p {
+            font-family: 'Verdana', sans-serif;
+            color: #1e4f42
+            }
+
+            button {
+                background-color: #368a73;
+                color: #fff;
+                padding: 12px 24px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+                margin: 8px;
+                transition: background-color 0.3s ease;
+            }
+
+            button:hover {
+                background-color: #1e4f42;
+            }
+        </style>
+
+
+    </head>
+<body>
+    <div class = "centered-text">
+        <h1 style="font-family: 'Great Vibes', cursive; color: #1e4f42; font-size:xxx-large;">Christmas Wish Lists!</h1>
+    </div>
+    <img src="{{ url_for('static', filename='winterwonderland.jpg') }}" alt="Winter Wonderland" style="width: 100%; height: auto;">
+    <div id="main-content", class="centered-text">
+        <h2>You would like to remove the following item for {{ user_name_of_removed }}, correct?</h2>
+        <h2>{{ item }}</h2>
+        <div>
+            <button onclick="location.href='{{ url_for('remove_item', user_name_of_removed=user_name_of_removed, item=item) }}'">Yes</button>
+            <button onclick="location.href='{{ url_for('view_wishlists', user_name=user_name) }}'">No</button>
+        </div>
+    </div>
+</body>
+</html>
