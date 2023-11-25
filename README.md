@@ -12,6 +12,6 @@ Family members who decide to fulfill a wish can anonymously remove the chosen it
 3. **Secrecy Maintained:**
 To maintain an element of surprise, users won't be able to see what gifts have been removed from their wishlists. The excitement builds up until the actual gift exchange!
 
-This project marked my first foray into website development, providing valuable experience in setting up a database to record wishlist entries and manage the removal of purchased gifts. I hope this platform adds an extra layer of joy and excitement to your family's Christmas celebrations!
+This project was my first foray into website development, providing valuable experience in setting up a database to record wishlist entries and manage the removal of purchased gifts. I hope this platform adds an extra layer of joy and excitement to your family's Christmas celebrations!
 
 Feel free to explore the code and contribute your ideas to make this Christmas Wish List Website even more festive! 🎁🎅
